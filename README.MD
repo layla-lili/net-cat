@@ -1,3 +1,6 @@
+
+# NET-CAT
+```bash
 📦net-cat
  ┣ 📂cmd
  ┃ ┣ 📜history.txt
@@ -28,3 +31,21 @@
  ┣ 📜client_script.bash.txt
  ┣ 📜go.mod
  ┗ 📜learning.md
+```
+
+
+ ## TODO
++ unit testing
++ Can the Clients change their names?
+
++ Is the chat group informed if a Client changes his name?
+
++ Does the server produce logs about Clients activities?
+
++ Are the server logs saved into a file?
+
++ Is there more NetCat flags implemented?
+
++ Does the project present a Terminal UI using JUST this package : https://github.com/jroimartin/gocui?
+
+
