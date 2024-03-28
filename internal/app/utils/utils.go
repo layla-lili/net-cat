@@ -1,8 +1,7 @@
-package server
+package utils
 
 import (
 	"fmt"
-	"net"
 	"os"
 	"strconv"
 )
@@ -27,16 +26,4 @@ func ParsePortFromArgs(args []string) int {
 
 	return port
 }
-
-func broadcast(message string, sender net.Conn) {
-    for _, client := range Clients{
-        if client.Conn != sender {
-            client.Conn.Write([]byte(message))
-        }
-    }
-}
-
-
-
-
 

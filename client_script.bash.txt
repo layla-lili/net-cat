@@ -1,0 +1,24 @@
+#!/bin/bash
+
+# Build the netcat server
+go build -o netcatserver server.go
+
+# Start the server in the background
+./netcatserver &
+
+echo "Connecting to server..."
+
+# Wait for the server to start
+sleep 1
+
+# Function to connect to the server using netcat
+function connect_to_server {
+    echo "$1" | nc localhost 8989
+}
+
+# Loop to connect to the server
+for i in {1..10}
+do
+    connect_to_server "hello"
+    sleep 1  # Optional: Wait for 1 second between connections
+done
