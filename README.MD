@@ -35,7 +35,7 @@
 
 
  ## TODO
-+ unit testing
++ unit testing - timing for client connection before name prompt and no message send for so long
 + Can the Clients change their names?
 
 + Is the chat group informed if a Client changes his name?

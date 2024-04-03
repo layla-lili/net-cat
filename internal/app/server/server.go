@@ -17,14 +17,16 @@ import (
 	"netcat/internal/app/client"
 )
 
+
 // Server represents a TCP server for the NetCat application.
 type Server struct {
 	Addr             string        // Address on which the server listens for incoming connections
 	Mutex            sync.Mutex    // Mutex for thread-safe access to server state
 	ActiveClients    int           // Number of active clients connected to the server
 	ActiveClientsMux sync.Mutex    // Mutex for thread-safe access to active client count
-}
+	logger *log.Logger
 
+}
 // init initializes the server by reading welcome message and setting history file.
 func init() {
 	// Read the content of welcome.txt
@@ -39,11 +41,21 @@ func init() {
 
 // NewServer creates a new instance of the server.
 func NewServer() interfaces.ServerInitializer {
-	return &Server{}
+	// Initialize logger with os.Stdout
+    logger := log.New(os.Stdout, "[Server] ", log.LstdFlags)
+
+	return &Server{
+        logger: logger,
+	}
 }
 
 // InitializeServer initializes the server with the specified address.
 func (s *Server) InitializeServer(addr string) error {
+	if s == nil{
+		log.Println("Error: nil")
+		return nil
+	}
+
 	s.CleanupHistoryFile()
 	s.Addr = addr
 	return nil
@@ -135,6 +147,10 @@ func (s *Server) handleClientMessages(conn net.Conn, username string) {
 
 // sendWelcomeMessage sends the welcome message to a newly connected client.
 func (s *Server) sendWelcomeMessage(conn net.Conn) {
+	if s == nil{
+			log.Println("Error: Mock connection is nil or CloseFunc is nil")
+			return 
+	}
 	conn.Write([]byte(interfaces.WelcomeMessage))
 }
 
@@ -152,12 +168,21 @@ func (s *Server) addClient(conn net.Conn, username string) {
 		return
 	}
 
+	// Add the client to the list of active clients (inside the critical section)
+	s.addClientToList(conn, username)
+
+}
+
+func (s *Server) addClientToList(conn net.Conn, username string) {
 	writer := bufio.NewWriter(conn)
 	interfaces.Clients = append(interfaces.Clients, client.Client{Conn: conn, Name: username, Writer: writer})
+
+	// Increment the active client count (inside the critical section)
 	s.ActiveClientsMux.Lock()
 	s.ActiveClients++
 	s.ActiveClientsMux.Unlock()
 }
+
 
 // sendInitialMessages sends initial messages to a newly connected client.
 func (s *Server) sendInitialMessages(conn net.Conn, username string) {
@@ -239,7 +264,11 @@ func (s *Server) broadcast(message string, senderName string, sender net.Conn, m
 				log.Printf("Invalid message type: %s", messageType)
 				return
 			}
-			client.Writer.Flush()
+			// Release the mutex temporarily while formatting and writing messages
+            s.Mutex.Unlock()
+            client.Writer.Flush()
+            s.Mutex.Lock()
+
 		}
 	}
 }
