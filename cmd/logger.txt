@@ -1,0 +1,96 @@
+Activity in netcat/internal/app/server.init.0[/Users/laylablockchainjs/net-cat/internal/app/server/server.go:37]: Welcome file read successfully
+
+Activity in netcat/internal/app/server.(*Server).CleanupHistoryFile[/Users/laylablockchainjs/net-cat/internal/app/server/server.go:338]: History file opened successfully
+
+Activity in netcat/internal/app/server.(*Server).CleanupHistoryFile[/Users/laylablockchainjs/net-cat/internal/app/server/server.go:347]: History file truncated successfully
+
+Activity in netcat/internal/app/server.(*Server).ListenAndServe[/Users/laylablockchainjs/net-cat/internal/app/server/server.go:72]: Server listening on :8989
+
+Activity in netcat/internal/app/server.GetIpLocal[/Users/laylablockchainjs/net-cat/internal/app/server/utils.go:98]: UDP connection established successfully
+
+Activity in netcat/internal/app/server.(*Server).ListenAndServe[/Users/laylablockchainjs/net-cat/internal/app/server/server.go:90]: Connection accepted successfully
+
+Activity in netcat/internal/app/server.LoadHistoryMessages[/Users/laylablockchainjs/net-cat/internal/app/server/utils.go:54]: History file read successfully
+
+Activity in netcat/internal/app/server.(*Server).loadHistoryMessages[/Users/laylablockchainjs/net-cat/internal/app/server/server.go:246]: History messages loaded successfully
+
+Activity in netcat/internal/app/server.init.0[/Users/laylablockchainjs/net-cat/internal/app/server/server.go:36]: Welcome file read successfully
+
+Activity in netcat/internal/app/server.(*Server).CleanupHistoryFile[/Users/laylablockchainjs/net-cat/internal/app/server/server.go:326]: History file opened successfully
+
+Activity in netcat/internal/app/server.(*Server).CleanupHistoryFile[/Users/laylablockchainjs/net-cat/internal/app/server/server.go:335]: History file truncated successfully
+
+Activity in netcat/internal/app/server.(*Server).ListenAndServe[/Users/laylablockchainjs/net-cat/internal/app/server/server.go:68]: Server listening on :8989
+
+Activity in netcat/internal/app/server.GetIpLocal[/Users/laylablockchainjs/net-cat/internal/app/server/utils.go:98]: UDP connection established successfully
+
+Activity in netcat/internal/app/server.(*Server).ListenAndServe[/Users/laylablockchainjs/net-cat/internal/app/server/server.go:84]: Connection accepted successfully
+
+Activity in netcat/internal/app/server.LoadHistoryMessages[/Users/laylablockchainjs/net-cat/internal/app/server/utils.go:54]: History file read successfully
+
+Activity in netcat/internal/app/server.(*Server).loadHistoryMessages[/Users/laylablockchainjs/net-cat/internal/app/server/server.go:234]: History messages loaded successfully
+
+Activity in netcat/internal/app/server.(*Server).ListenAndServe[/Users/laylablockchainjs/net-cat/internal/app/server/server.go:84]: Connection accepted successfully
+
+Activity in netcat/internal/app/server.LoadHistoryMessages[/Users/laylablockchainjs/net-cat/internal/app/server/utils.go:54]: History file read successfully
+
+Activity in netcat/internal/app/server.(*Server).loadHistoryMessages[/Users/laylablockchainjs/net-cat/internal/app/server/server.go:234]: History messages loaded successfully
+
+Activity in netcat/internal/app/server.SaveHistoryMessage[/Users/laylablockchainjs/net-cat/internal/app/server/utils.go:73]: History file opened successfully
+
+Activity in netcat/internal/app/server.SaveHistoryMessage[/Users/laylablockchainjs/net-cat/internal/app/server/utils.go:85]: History file written successfully
+
+Activity in netcat/internal/app/server.(*Server).handleClientMessages[/Users/laylablockchainjs/net-cat/internal/app/server/server.go:159]: Message saved to history successfully
+
+Activity in netcat/internal/app/server.(*Server).ListenAndServe[/Users/laylablockchainjs/net-cat/internal/app/server/server.go:84]: Connection accepted successfully
+
+Activity in netcat/internal/app/server.LoadHistoryMessages[/Users/laylablockchainjs/net-cat/internal/app/server/utils.go:54]: History file read successfully
+
+Activity in netcat/internal/app/server.(*Server).loadHistoryMessages[/Users/laylablockchainjs/net-cat/internal/app/server/server.go:234]: History messages loaded successfully
+
+Activity in netcat/internal/app/server.SaveHistoryMessage[/Users/laylablockchainjs/net-cat/internal/app/server/utils.go:73]: History file opened successfully
+
+Activity in netcat/internal/app/server.SaveHistoryMessage[/Users/laylablockchainjs/net-cat/internal/app/server/utils.go:85]: History file written successfully
+
+Activity in netcat/internal/app/server.(*Server).handleClientMessages[/Users/laylablockchainjs/net-cat/internal/app/server/server.go:159]: Message saved to history successfully
+
+Activity in netcat/internal/app/server.init.0[/Users/laylablockchainjs/net-cat/internal/app/server/server.go:36]: Welcome file read successfully
+
+Activity in netcat/internal/app/server.(*Server).CleanupHistoryFile[/Users/laylablockchainjs/net-cat/internal/app/server/server.go:328]: History file opened successfully
+
+Activity in netcat/internal/app/server.(*Server).CleanupHistoryFile[/Users/laylablockchainjs/net-cat/internal/app/server/server.go:337]: History file truncated successfully
+
+Activity in netcat/internal/app/server.(*Server).ListenAndServe[/Users/laylablockchainjs/net-cat/internal/app/server/server.go:68]: Server listening on :8989
+
+Activity in netcat/internal/app/server.GetIpLocal[/Users/laylablockchainjs/net-cat/internal/app/server/utils.go:98]: UDP connection established successfully
+
+Activity in netcat/internal/app/server.(*Server).ListenAndServe[/Users/laylablockchainjs/net-cat/internal/app/server/server.go:84]: Connection accepted successfully
+
+Activity in netcat/internal/app/server.(*Server).ListenAndServe[/Users/laylablockchainjs/net-cat/internal/app/server/server.go:84]: Connection accepted successfully
+
+Activity in netcat/internal/app/server.(*Server).ListenAndServe[/Users/laylablockchainjs/net-cat/internal/app/server/server.go:84]: Connection accepted successfully
+
+Activity in netcat/internal/app/server.LoadHistoryMessages[/Users/laylablockchainjs/net-cat/internal/app/server/utils.go:54]: History file read successfully
+
+Activity in netcat/internal/app/server.(*Server).loadHistoryMessages[/Users/laylablockchainjs/net-cat/internal/app/server/server.go:236]: History messages loaded successfully
+
+Activity in netcat/internal/app/server.LoadHistoryMessages[/Users/laylablockchainjs/net-cat/internal/app/server/utils.go:54]: History file read successfully
+
+Activity in netcat/internal/app/server.(*Server).loadHistoryMessages[/Users/laylablockchainjs/net-cat/internal/app/server/server.go:236]: History messages loaded successfully
+
+Activity in netcat/internal/app/server.SaveHistoryMessage[/Users/laylablockchainjs/net-cat/internal/app/server/utils.go:73]: History file opened successfully
+
+Activity in netcat/internal/app/server.SaveHistoryMessage[/Users/laylablockchainjs/net-cat/internal/app/server/utils.go:85]: History file written successfully
+
+Activity in netcat/internal/app/server.(*Server).handleClientMessages[/Users/laylablockchainjs/net-cat/internal/app/server/server.go:161]: Message saved to history successfully
+
+Activity in netcat/internal/app/server.LoadHistoryMessages[/Users/laylablockchainjs/net-cat/internal/app/server/utils.go:54]: History file read successfully
+
+Activity in netcat/internal/app/server.(*Server).loadHistoryMessages[/Users/laylablockchainjs/net-cat/internal/app/server/server.go:236]: History messages loaded successfully
+
+Activity in netcat/internal/app/server.SaveHistoryMessage[/Users/laylablockchainjs/net-cat/internal/app/server/utils.go:73]: History file opened successfully
+
+Activity in netcat/internal/app/server.SaveHistoryMessage[/Users/laylablockchainjs/net-cat/internal/app/server/utils.go:85]: History file written successfully
+
+Activity in netcat/internal/app/server.(*Server).handleClientMessages[/Users/laylablockchainjs/net-cat/internal/app/server/server.go:161]: Message saved to history successfully
+
