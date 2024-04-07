@@ -1,6 +1,8 @@
 package mocks
 
 import (
+	"errors"
+	"fmt"
 	"io"
 	"log"
 	"net"
@@ -16,6 +18,9 @@ type MockConn struct {
     RemoteAddrFunc func() net.Addr
     CloseFunc      func() error
     WriteFunc      func(p []byte) (n int, err error) // Define WriteFunc field
+    ReadFunc      func(p []byte) (n int, err error) // Define ReadFunc field
+	// New field for reading messages with template
+	ReadTemplateFunc func(p []byte) (n int, err error)
 
 }
 
@@ -81,6 +86,35 @@ func (c *MockConn) Write(p []byte) (n int, err error) {
 
 	return c.WriteFunc(p)
 }
+
+// Read implements the net.Conn Read method.
+func (c *MockConn) Read(p []byte) (n int, err error) {
+    if c == nil || c.Reader == nil {
+        return 0, errors.New("MockConn: Reader is nil")
+    }
+    
+    // Return a predefined input data
+    input := []byte("layla\n")
+    copy(p, input)
+    return len(input), nil
+}
+
+// CustomRead implements a custom Read method for reading messages with template.
+func (c *MockConn) CustomRead(p []byte, reader io.Reader) (n int, err error) {
+    if reader == nil {
+        return 0, errors.New("MockConn: Reader is nil")
+    }
+
+    // Return a predefined input data
+    input := []byte("Test message\n")
+    senderName := "Sender"
+    expectedMessage := fmt.Sprintf("\n[%s][%s]: %s\n", time.Now().Format("2006-01-02 15:04:05"), senderName, input)
+
+    copy(p, expectedMessage)
+
+    return reader.Read(p)
+}
+
 
 
 

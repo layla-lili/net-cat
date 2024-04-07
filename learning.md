@@ -169,3 +169,31 @@ Reflection in Go is typically used in scenarios where you need to work with type
 8. **Database ORM**: Object-Relational Mapping (ORM) libraries often use reflection to map database records to Go struct fields.
 
 However, it's important to use reflection judiciously as it comes with some performance overhead and can make the code less readable and harder to reason about. Whenever possible, prefer static typing and compile-time checks over reflection.
+
+# Dial and listen
+Yes, there's a difference between net.Listen("tcp", addr) and net.Dial("tcp", addr).
+
+- net.Listen("tcp", addr):
+This function creates a listener for TCP connections on the specified network address (e.g., "localhost:8080").
+It returns a net.Listener object and an error. The listener can accept incoming connections using its Accept() method.
+This function is typically used by servers to start listening for incoming connections from clients.
+
+- net.Dial("tcp", addr):
+This function dials a TCP connection to the specified network address (e.g., "localhost:8080").
+It returns a net.Conn object and an error. The connection represents a client's connection to the server.
+This function is typically used by clients to establish a connection to a server.
+In summary, net.Listen is used by servers to start listening for incoming connections, while net.Dial is used by clients to establish a connection to a server. The primary difference lies in their usage scenarios and the type of objects they return.
+
+
+# The main difference between a local IP address and `127.0.0.1` lies in their scope and usage:
+
+1. **Local IP Address (e.g., `192.168.x.x`, `10.x.x.x`, etc.)**: This is an IP address assigned to a device within a local network. It's used for communication within that network. Local IP addresses are not routable on the internet; they are used for internal network communication only. Each device within a local network typically has its own local IP address.
+
+2. **Loopback Address (`127.0.0.1`)**: This is a special-purpose IP address that is used to refer to the local machine itself. It's commonly referred to as the loopback address. When a connection is made to `127.0.0.1`, it's routed internally within the same device without going through the network interface. It's often used for testing and development purposes, allowing applications to communicate with themselves without needing an external network connection.
+
+In summary, while both represent local addresses, local IP addresses are used for communication within a local network, whereas `127.0.0.1` is specifically used for communication within the same device (loopback).
+
+# conn, err := net.Dial("udp", "8.8.8.8:80")
+No Connection Establishment Overhead: UDP (User Datagram Protocol) is a connectionless protocol. Unlike TCP, which requires a connection setup phase (three-way handshake), UDP does not have this overhead. This makes it suitable for quick operations like retrieving the local IP address without establishing a full TCP connection.
+
+So, even though the server is bound to the IP address 192.168.3.8, it is still able to accept connections from the loopback address 127.0.0.1. This is because the server is running on the local machine, and connections to 127.0.0.1 are routed internally within the same machine. This behavior allows you to connect to the server using either its local IP address (192.168.3.8) or the loopback address (127.0.0.1), as both addresses point to the same machine.

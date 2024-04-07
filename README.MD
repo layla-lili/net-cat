@@ -40,9 +40,9 @@
 
 + Is the chat group informed if a Client changes his name?
 
-+ Does the server produce logs about Clients activities?
++ Does the server produce logs about Clients activities? yes
 
-+ Are the server logs saved into a file?
++ Are the server logs saved into a file? yes
 
 + Is there more NetCat flags implemented?
 
